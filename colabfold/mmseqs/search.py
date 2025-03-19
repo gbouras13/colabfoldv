@@ -357,8 +357,8 @@ def main():
     parser.add_argument(
         "--db5",
         type=Path,
-        default=Path("combined_virus_proteins_DB"),
-        help="Environmental database",
+        default=Path("combined_virus_proteins_DB100"),
+        help="Viral database",
     )
     # poor man's boolean arguments
     parser.add_argument(
