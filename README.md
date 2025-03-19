@@ -1,6 +1,6 @@
 # colabfoldv
 
-This repository is intended to replicate only the `colabfold_search` functionality of the local ColabFold MSA generation pipeline, with an added protein database of `129944764` proteins tailored for viruses, especially phages. Please see `dataset_curation` for more details on how it was constructed.
+This repository is intended to replicate only the `colabfold_search` functionality of the local ColabFold MSA generation pipeline, with an added protein database of `129944764` non-redundant proteins tailored for viruses, especially phages. Please see `dataset_curation` for more details on how it was constructed.
 
 For the full Colabfold functionality and up-to-date changes (and frankly anything outside of the use case presented below), please go to the [ColabFold repository](https://github.com/sokrypton/ColabFold).
 
@@ -25,16 +25,17 @@ cd colabfoldDBs
 bash ../setup_databases.sh
 ```
 
-### Download the viral DB
+### Download the viral/phage DB
 
-* The viral database database is stored on Zenodo (just). It therefore may take some time to download.
+* The viral/phage database database is stored on Zenodo. It is 39GB, and therefore it may take some time to download.
+* I would highly recommend using aria2c (as used in MMSeqs2 and Foldseek) to download, but you can use e.g. wget or curl
 
 ```bash
-
+aria2c https://zenodo.org/records/15045387/files/viral_db.tar.xz
+tar -xvf viral_db.tar.xz
 ```
 
 ### To use (change to the desired number of threads)
-
 
 ```bash
 THREADS=72

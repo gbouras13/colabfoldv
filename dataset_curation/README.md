@@ -56,14 +56,14 @@ python put_subdirectory.py
 
 ## Jaeger
 
-* Phages and prophage were predicted from Mgnify contigs using [Jaeger](https://github.com/Yasas1994/Jaeger) and shared with me. These were then annotated with Pharokka v1.7.3 and gene called with `pyrodigal-gv` in the same way as `Phage scope`
+* Phages and prophages were predicted from publicly available Mgnify assemblies up to August 2023 using [Jaeger](https://github.com/Yasas1994/Jaeger) and shared with me. These were then annotated with Pharokka v1.7.3 and gene called with `pyrodigal-gv` in the same way as `Phagescope`
 * In total there were `174561888` proteins from this source
 
 ## Deduplication
 
 * All proteins were combined, yielding `244417965` proteins ( `combined_virus_proteins.faa` )
 * MMseqs2 v `87e7103d289029dc3345f85ea9a4c4c6d6416e46` was then used to deduplicate, cluster (at 30% seq-id and 90% coverage) and create colabfold compatible databases as follows
-* Specifically, the database contains `129944764` non-redundant proteins and `60287451` clusters
+* Specifically, the database contains `129944764` non-redundant proteins in `combined_virus_proteins_DB100` and `60287451` clusters in `combined_virus_proteins_DB100_clu_searchDB`
 
 ```
 THREADS=256
