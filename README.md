@@ -4,13 +4,19 @@ This repository is intended to replicate only the `colabfold_search` functionali
 
 For the full Colabfold functionality and up-to-date changes (and frankly anything outside of the use case presented below), please go to the [ColabFold repository](https://github.com/sokrypton/ColabFold).
 
+This was used to create some MSAs used in [phold's](https://github.com/gbouras13/phold) database.
+
 ## Installation
 
 * This will replicate the MSAs used in the enVhogs and PHROG singleton protein structures in [Phold](https://github.com/gbouras13/phold). You can use other, later versions of MMSeqs2 if you'd like.
 
+* This assumes you have [conda](https://github.com/conda-forge/miniforge) installed.
+
 ```bash
-conda create -n colabfoldv_test python=3.12 mmseqs==15.6f452
-conda activate colabfoldv_test
+conda create -n colabfoldv_env python=3.12 mmseqs==15.6f452 pip
+conda activate colabfoldv_env
+git clone https://github.com/gbouras13/colabfoldv
+cd colabfoldv
 pip install -e .
 pip install colabfold[alphafold]
 ```
@@ -36,6 +42,8 @@ tar -xvf viral_db.tar.xz
 ```
 
 ### To use (change to the desired number of threads)
+
+* This will create MSAs without pairing (i.e. for monomers) for all proteins in `example/NC_043029_aa.fasta` using all three databases
 
 ```bash
 THREADS=72
